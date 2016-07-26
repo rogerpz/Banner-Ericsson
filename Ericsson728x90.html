@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            @font-face {
+            font-family: 'ericsson_capital_ttregular';
+            src: url('fonts/ericssoncapitaltt-webfont.eot');
+            src: 
+                url('fonts/ericssoncapitaltt-webfont.eot?#iefix') format('embedded-opentype'),
+                url('fonts/ericssoncapitaltt-webfont.woff') format('woff'),
+                url('fonts/ericssoncapitaltt-webfont.ttf') format('truetype'),
+                url('fonts/ericssoncapitaltt-webfont.svg#ericsson_capital_ttregular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            }
+            
+            @font-face {
+            font-family: 'EricssonSans-Regular';
+            src: url('fonts/EricssonSans-Regular.eot?#iefix') format('embedded-opentype'),  url('fonts/EricssonSans-Regular.otf')  format('opentype'), url('fonts/EricssonSans-Regular.woff') format('woff'), url('fonts/EricssonSans-Regular.ttf')  format('truetype'), url('fonts/EricssonSans-Regular.svg#EricssonSans-Regular') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            }
+            
+            body {
+                font-size: 24px;
+                color: #FFF;
+                font-family: 'EricssonSans-Regular';
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+            
+            #content {
+                position: relative;
+                width: 728px;
+                height: 90px;
+                
+                overflow: hidden;
+                cursor: pointer;
+		box-sizing: border-box;
+                margin: auto;
+            }
+            
+            #nine {
+                position: absolute;
+		font-family: 'ericsson_capital_ttregular';
+                color: #FFF;
+		font-size: 58px;
+		line-height:55px;
+		left: 105px;
+                top: 8px;
+            }
+            
+            #questions {
+                position: absolute;
+		font-family: 'EricssonSans-Regular', Arial,sans-serif;
+                color: #FFF;
+		font-size: 24px;
+		line-height:23px;
+		left: 110px;
+                top: 60px;
+            }
+            
+            #five {
+                position: absolute;
+		font-family: 'ericsson_capital_ttregular';
+                color: #FFF;
+		font-size: 58px;
+		line-height:55px;
+		left: 160px;
+                top: 8px;
+            }
+            
+            #cities {
+                position: absolute;
+		font-family: 'EricssonSans-Regular';
+                color: #FFF;
+		font-size: 24px;
+		line-height:23px;
+		left: 165px;
+                top: 60px;
+            }
+            
+            #purpleText {
+                position: absolute;
+		font-family: 'EricssonSans-Regular';
+                z-index: 25;
+                color: #FFF;
+		font-size: 25px;
+		line-height:27px;
+		left: 30px;
+                width: 250px;
+                text-align: left;
+                top: 20px;
+                animation: purpleText-in-animation 15s 3;
+            }
+            
+            #greenText {
+                position: absolute;
+		font-family: 'EricssonSans-Regular';
+                z-index: 25;
+                color: #FFF;
+		font-size: 25px;
+		line-height:27px;
+		left: 30px;
+                width: 300px;
+                text-align: left;
+                top: 20px;
+                animation: greenText-in-animation 15s 3;
+            }
+            
+            #blueText {
+                position: absolute;
+		font-family: 'EricssonSans-Regular';
+                z-index: 25;
+                color: #FFF;
+		font-size: 25px;
+		line-height:90px;
+		left: 30px;
+                width: 250px;
+                text-align: left;
+                top: 0px;
+                animation: blueText-in-animation 15s 3;
+            }
+            
+             #blueTextFinal {
+                position: absolute;
+		font-family: 'EricssonSans-Regular';
+                z-index: 25;
+                color: #FFF;
+		font-size: 25px;
+		line-height:90px;
+		left: 30px;
+                width: 250px;
+                text-align: left;
+                top: 0px;
+            }
+            
+            #bluePlay {
+                position: absolute;
+		background-image: url(images/play.png);
+                z-index: 25;
+                left: 235px;
+                width: 61px;
+                height: 60px;
+                top: 15px;
+                animation: blueText-in-animation 15s 3;
+            }
+            
+            #bluePlayFinal {
+                position: absolute;
+		background-image: url(images/play.png);
+                z-index: 25;
+                left: 235px;
+                width: 61px;
+                height: 60px;
+                top: 15px;
+            }
+            
+            #blueShape {
+                width: 431px;
+                height: 90px;
+                z-index: 30;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-image: url(images/blueShape.png);
+                animation: blueShape-in-animation 15s 3 ease-out;
+            }
+            
+            #blueShapeEnd {
+                width: 728px;
+                height: 90px;
+                z-index: 30;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-image: url(images/blueBack2.png);
+                animation: blueShapeEnd-in-animation 15s 3 ease-out;
+            }
+            
+            #blueBack {
+                width: 728px;
+                height: 90px;
+                z-index: 29;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-color: #00A9D4;
+                animation: blueBack-in-animation 15s 3 ease-out;
+            }
+            
+            #blueFinal {
+                width: 728px;
+                height: 90px;
+                z-index: 29;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-color: #00A9D4;
+                animation: blueFinal-in-animation 15s 3 ease-out;
+            }
+            
+            #greenShape {
+                width: 432px;
+                height: 90px;
+                z-index: 30;
+                position: absolute;
+                top: 0px;
+                left: 695px;
+                background-image: url(images/greenShape.png);
+                animation: greenShape-in-animation 15s 3 ease-out;
+            }
+            
+            #colorsShape {
+                width: 321px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                animation: colorsShape-in-animation 15s 3;
+            }
+            
+            #colorsShapeFinal {
+                width: 321px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+            }
+            
+            #guyPic1 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy1.png);
+                top: 0px;
+                left: 321px;
+                animation: guyPic1-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guyPic2 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy2.png);
+                top: 0px;
+                left: 321px;
+                animation: guyPic2-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guyPic3 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy3.png);
+                top: 0px;
+                left: 321px;
+                animation: guyPic3-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guy3 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy3.png);
+                top: 0px;
+                left: 321px;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guyPic4 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy4.png);
+                top: 0px;
+                left: 423px;
+                animation: guyPic4-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guyPic5 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy5.png);
+                top: 0px;
+                left: 423px;
+                animation: guyPic5-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guyPic6 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy6.png);
+                top: 0px;
+                left: 423px;
+                animation: guyPic6-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guy6 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy6.png);
+                top: 0px;
+                left: 423px;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guyPic7 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy7.png);
+                top: 0px;
+                left: 524px;
+                animation: guyPic7-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guyPic8 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy8.png);
+                top: 0px;
+                left: 524px;
+                animation: guyPic8-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guyPic9 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy9.png);
+                top: 0px;
+                left: 524px;
+                animation: guyPic9-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guy9 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy9.png);
+                top: 0px;
+                left: 524px;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 1px;
+                border-color: #FFF;
+            }
+            
+            #guyPic10 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy10.png);
+                top: 0px;
+                left: 626px;
+                animation: guyPic10-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 0px;
+                border-color: #FFF;
+            }
+            
+            #guyPic11 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy11.png);
+                top: 0px;
+                left: 626px;
+                animation: guyPic11-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 0px;
+                border-color: #FFF;
+            }
+            
+            #guyPic12 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy12.png);
+                top: 0px;
+                left: 626px;
+                animation: guyPic12-in-animation 15s 3;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 0px;
+                border-color: #FFF;
+            }
+            
+            #guy12 {
+                width: 100px;
+                height: 90px;
+                z-index: 25;
+                position: absolute;
+                background-image: url(images/guy12.png);
+                top: 0px;
+                left: 626px;
+                border-style: solid;
+                border-top-width: 0px;
+                border-bottom-width: 0px;
+                border-left-width: 2px;
+                border-right-width: 0px;
+                border-color: #FFF;
+            }
+            
+            #finalShape {
+                position: absolute;
+                width: 728px;
+                height: 90px;
+                background-color: #00A9D4;
+                z-index: 35;
+                animation: finalShape-in-animation 45s 1;
+            }
+                       
+            
+            /* Animations */
+            
+            @keyframes blueShape-in-animation {
+                0%, 25.66%   {left: 0px;}
+                26.66%, 100% {left: -400px;}
+            }
+            
+            @keyframes blueShapeEnd-in-animation {
+                0%, 95% {left: -728px;}
+                96%, 100% {left: 0px;}
+            }
+            
+            @keyframes blueBack-in-animation {
+                0%, 14%   {left: 0px; top: 0px;}
+                15%, 100% {top: -90px;}
+            }
+            
+            @keyframes greenShape-in-animation {
+                0%, 6.66%   {left: 700px;}
+                7.66%, 25.66%   {left: 326px;}
+                26.66%, 100% {left: 700px;}
+            }
+            
+            @keyframes colorsShape-in-animation {
+                0%, 52.3%   {background-color: #7B0663;}
+                52.4%, 79.84%   {background-color: #00625F;}
+                79.85%, 100%   {background-color: #00A9D4;}
+            }
+            
+            @keyframes purpleText-in-animation {
+                0%, 52.3%   {opacity: 1;}
+                52.4%, 100%  {opacity: 0;}
+            }
+            
+            @keyframes greenText-in-animation {
+                0%, 52.3%   {opacity: 0;}
+                52.4%, 79.84%  {opacity: 1;}
+                79.85%, 100%   {opacity: 0;}
+            }
+            
+            @keyframes blueText-in-animation {
+                0%, 79.84%  {opacity: 0}
+                79.85%, 100%   {opacity: 1;}
+            }
+            
+            @keyframes guyPic1-in-animation {
+                0%, 45% {opacity: 1;}
+                46%, 100% {opacity: 0;}
+            }
+            
+            @keyframes guyPic2-in-animation {
+                0%, 44% {opacity: 0;}
+                45%, 72% {opacity: 1;}
+                73%, 100% {opacity: 0;}
+            }
+            
+            @keyframes guyPic3-in-animation {
+                0%, 72% {opacity: 0;}
+                73%, 100%   {opacity: 1;}
+            }
+            
+            @keyframes guyPic4-in-animation {
+                0%, 49% {opacity: 1;}
+                51%, 100% {opacity: 0;}
+            }
+            
+            @keyframes guyPic5-in-animation {
+                0%, 48% {opacity: 0;}
+                49%, 75% {opacity: 1;}
+                76%, 100% {opacity: 0;}
+            }
+            
+            @keyframes guyPic6-in-animation {
+                0%, 74% {opacity: 0;}
+                75%, 100%   {opacity: 1;}
+            }
+            
+            @keyframes guyPic7-in-animation {
+                0%, 40% {opacity: 1;}
+                41%, 100% {opacity: 0;}
+            }
+            
+            @keyframes guyPic8-in-animation {
+                0%, 39% {opacity: 0;}
+                40%, 72% {opacity: 1;}
+                73%, 100% {opacity: 0;}
+            }
+            
+            @keyframes guyPic9-in-animation {
+                0%, 69% {opacity: 0;}
+                70%, 100%   {opacity: 1;}
+            }
+            
+            @keyframes guyPic10-in-animation {
+                0%, 40% {opacity: 1;}
+                41%, 100% {opacity: 0;}
+            }
+            
+            @keyframes guyPic11-in-animation {
+                0%, 39% {opacity: 0;}
+                40%, 72% {opacity: 1;}
+                73%, 100% {opacity: 0;}
+            }
+            
+            @keyframes guyPic12-in-animation {
+                0%, 69% {opacity: 0;}
+                70%, 100%   {opacity: 1;}
+            }
+            
+            @keyframes blueFinal-in-animation {
+                0%, 95%   {opacity: 0;}
+                96%, 100%  {opacity: 1;}
+            }
+            
+            @keyframes finalShape-in-animation {
+                0%, 97%   {opacity: 0;}
+                98%, 100%  {opacity: 1;}
+            }
+            
+        </style>
+    <title>Nine Questions</title>
+    <meta charset="UTF-8">
+    </head>
+        <body><a href="https://www.ericsson.com/spotlight/media#section_5">
+            <div id="content">
+            <div id="blueShape">
+                <div id="nine">NINE</div>
+                <div id="questions">QUESTIONS</div>
+            </div>
+            <div id="blueBack"></div>
+            <div id="greenShape">
+                <div id="five">FIVE</div>
+                <div id="cities">CITIES</div>
+            </div> 
+            <div id="colorsShape"></div>
+            <div id="guyPic1"></div>
+            <div id="guyPic2"></div>
+            <div id="guyPic3"></div>
+            <div id="guyPic4"></div>
+            <div id="guyPic5"></div>
+            <div id="guyPic6"></div>
+            <div id="guyPic7"></div>
+            <div id="guyPic8"></div>
+            <div id="guyPic9"></div>
+            <div id="guyPic10"></div>
+            <div id="guyPic11"></div>
+            <div id="guyPic12"></div>
+            <div id="purpleText">
+                We asked people<br>about their TV habits
+            </div>
+            <div id="greenText">
+                Are you ready to<br>delight them every day?
+            </div>
+            <div id="blueText">
+                Watch the videos
+            </div>
+            <div id="bluePlay"></div>
+            <div id="blueShapeEnd">
+                <div id="nine">NINE</div>
+                <div id="questions">QUESTIONS</div>
+            </div>
+            <div id="finalShape">
+            <div id="colorShapeFinal"></div>
+            <div id="blueTextFinal">
+                Watch the videos
+            </div>
+            <div id="bluePlayFinal"></div>
+            <div id="guy3"></div>
+            <div id="guy6"></div>
+            <div id="guy9"></div>
+            <div id="guy12"></div>
+            </div>
+        </div></a>
+    </body>
+</html>
